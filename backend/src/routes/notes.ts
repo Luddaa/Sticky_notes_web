@@ -6,4 +6,6 @@ const routes = express.Router();
 
 routes.get("/", Notescontroller.getNotes); 
 
+routes.post("/", Notescontroller.createNotes);
+
 export default routes;

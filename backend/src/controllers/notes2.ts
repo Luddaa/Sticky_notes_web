@@ -82,3 +82,25 @@ export const updateNote = async (req: Request, res: Response, next: NextFunction
         next(error);
     }
 }
+
+
+
+
+export const deleteNote = async (req: Request, res: Response, next: NextFunction) => {
+    const noteId = req.params.noteid;
+
+    try {
+        // find the note in the database
+        const note = await NoteModel.findById(noteId).exec();
+
+        if (note) {
+            // delete the note from the database
+            await NoteModel.deleteOne({ _id: noteId });
+
+            res.status(204).send();
+        }
+    } catch (error) {
+        // Handle errors
+        next(error);
+    }
+}

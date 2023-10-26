@@ -12,4 +12,6 @@ routes.post("/", Notescontroller.createNotes);
 
 routes.patch("/:noteid", Notescontroller.updateNote);
 
+routes.delete("/:noteid", Notescontroller.deleteNote);
+
 export default routes;

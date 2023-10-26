@@ -15,6 +15,34 @@ export const getNotes = async (req: Request, res: Response, next: NextFunction) 
     }
 }
 
+
+
+
+
+
+
+// Handle a GET request to retrieve a single note
+export const getNote = async (req: Request, res: Response, next: NextFunction) => {
+    // Get the note ID 
+    const noteId = req.params.noteid;
+
+    try {
+        // find the note in the database
+        const note = await NoteModel.findById(noteId).exec();
+
+        // Send the note to the user
+        res.status(200).json(note);
+    } catch (error) {
+        // handle errors
+        next(error);
+    }
+};
+
+
+
+
+
+
 // Handle POST requests to create a new note
 export const createNotes = async (req: Request, res: Response, next: NextFunction) => {
     const { title, text } = req.body;
@@ -25,6 +53,30 @@ export const createNotes = async (req: Request, res: Response, next: NextFunctio
 
         // Send the new note to the user
         res.status(201).json(newNote);
+    } catch (error) {
+        // Handle errors
+        next(error);
+    }
+}
+
+
+
+export const updateNote = async (req: Request, res: Response, next: NextFunction) => {
+    const noteId = req.params.noteid;
+    const newTitle = req.body.title;
+    const newText = req.body.text;
+    
+    try {
+        // find the note in the database
+        const note = await NoteModel.findById(noteId).exec();
+    
+        if (note) {
+            note.title = newTitle;
+            note.text = newText;
+            const updatedNote = await note.save();
+    
+            res.status(200).json(updatedNote);
+        }
     } catch (error) {
         // Handle errors
         next(error);

@@ -6,6 +6,10 @@ const routes = express.Router();
 
 routes.get("/", Notescontroller.getNotes); 
 
+routes.get("/:noteid", Notescontroller.getNote);
+
 routes.post("/", Notescontroller.createNotes);
+
+routes.patch("/:noteid", Notescontroller.updateNote);
 
 export default routes;

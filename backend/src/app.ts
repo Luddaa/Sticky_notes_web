@@ -12,7 +12,7 @@ app.use("/api/notes", notesRoutes);
 
 // Middleware for handling endpoints not found
 app.use((req: Request, res: Response, next: NextFunction) => {
-  next(Error("Endpoint not found"));
+  res.status(404).json({ error: "Endpoint not found" });
 });
 
 // Generic error handling middleware

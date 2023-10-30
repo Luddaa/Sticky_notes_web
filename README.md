@@ -10,8 +10,8 @@ It's like having digital sticky notes that you can access from anywhere. Here's 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [DevDependencies](#DevDependencies)
+- [Dependencies](#Dependencies)
 
 
 ## Introduction
@@ -42,18 +42,40 @@ Later Features
 
 ## Getting Started
 
-Explain how to get started with your project. Provide step-by-step instructions, code examples, or links to any necessary resources.
+To get started with Sticky Notes Web, follow these steps:
 
-### Prerequisites
+1. Clone this repository to your local machine:
 
-List any prerequisites that users need to have before they can use your project. For example:
+   ```bash
+   git clone https://github.com/yourusername/sticky-notes-web.git
 
-- Node.js installed
-- Python 3.x
-- Database system (e.g., MySQL)
+2. Navigate to the project directory: cd sticky-notes-web
+3.Install project dependencies. Make sure you have Node.js installed. You can download it from nodejs.org. npm install
+4.Start the development server:npm start
+5.Your application should now be running at http://localhost:3000.
 
-### Installation
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+-Node.js installed
+-MongoDB installed and running
 
-Provide installation instructions. This can include code snippets or commands to run.
+## DevDependencies
+The following development dependencies are used in this project:
+
+-@types/express
+-nodemon - for automatic server restarts during development
+-ts-node - for running TypeScript files directly
+-typescript - for TypeScript support
+
+## Dependencies
+The following dependencies are used in this project:
+
+-dotenv - for loading environment variables from a .env file
+-express - for building the web server
+-mongodb - for MongoDB database access
+-mongoose - for MongoDB ODM (Object-Document Mapping)
+
+Enjoy using Sticky Notes Web for efficient note management!
+
 
 

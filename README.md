@@ -34,7 +34,7 @@ List the key features of your project. You can use bullet points for this:
 - User-Friendly
 
 -------------------------
-Later fewtures 
+Later Features 
 
 - Edit with Ease: Change your notes whenever you need to
 - Color change: Group notes by color to keep similar things together.

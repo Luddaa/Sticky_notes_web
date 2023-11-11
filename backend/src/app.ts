@@ -1,16 +1,15 @@
 import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 import notesRoutes from "./routes/notes";
-import userRoutes from "./routes/user";
-
+import userroutes from "./routes/users";
 const app = express();
 
 app.use(express.json());
 
-app.use("/api/user", userRoutes);
+
 
 app.use("/api/notes", notesRoutes);
-
+app.use("/api/users", userroutes);
 // Middleware for handling endpoints not found
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({ error: "Endpoint not found" });

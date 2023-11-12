@@ -1,4 +1,6 @@
+
 import { Note } from '../models/note';
+import { User } from '../models/user';
 
 // Function to handle common fetch logic
 async function fetchData(input: RequestInfo, init?: RequestInit) {
@@ -13,6 +15,48 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
   }
 }
 
+export async function getLoggedInUser(): Promise<User> {
+  const response = await fetchData('/api/users', { method: 'GET' });
+  return response.json(); // Parse and return the JSON response
+}
+
+export interface SignUpBody {
+  username: string;
+  email: string;
+  password: string;
+}
+
+export async function signUp(body: SignUpBody): Promise<User> {
+  const response = await fetchData('/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  return response.json(); // Parse and return the JSON response
+}
+
+export interface LoginBody {
+  email: string;
+  password: string;
+}
+
+export async function login(body: LoginBody): Promise<User> {
+  const response = await fetchData('/api/users/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  return response.json(); // Parse and return the JSON response
+}
+
+
+export async function logout(): Promise<void> {
+  await fetchData('/api/users/logout', { method: 'POST' });
+}
 // Function to fetch notes from the API
 export async function fetchNotes(): Promise<Note[]> {
   const response = await fetchData('/api/notes', { method: 'GET' });

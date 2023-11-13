@@ -15,7 +15,7 @@ interface NoteProps {
 }
 
 const Note: React.FC<NoteProps> = ({ note, className, onDeleteNoteClicked, onNoteClicked }) => {
-  const { title, text } = note;
+  const { title, text, } = note;
 
   const handleDeleteClick = (e: React.MouseEvent) => {
     onDeleteNoteClicked(note);

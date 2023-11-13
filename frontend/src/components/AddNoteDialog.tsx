@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Button, Form, Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Note } from '../models/note';
@@ -9,6 +9,7 @@ import TextInputField from './form/Textinputfield';
 
 
 interface AddNoteDialogProps {
+  noteToEdit?: Note,
   onDismiss: () => void; // Function to close the dialog
   onNoteSaved: (note: Note) => void; // Function to handle saving a new note
 }

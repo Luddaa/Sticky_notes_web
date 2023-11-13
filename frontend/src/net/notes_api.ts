@@ -81,6 +81,7 @@ export async function createNote(note: NoteInput): Promise<Note> {
   return response.json(); // Parse and return the JSON response
 }
 
+
 // Function to delete a note by its ID
 export async function deleteNote(id: string) {
   await fetchData(`/api/notes/${id}`, { method: 'DELETE' });

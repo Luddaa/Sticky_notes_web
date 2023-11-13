@@ -27,7 +27,7 @@ export interface SignUpBody {
 }
 
 export async function signUp(body: SignUpBody): Promise<User> {
-  const response = await fetchData('/api/users', {
+  const response = await fetchData('/api/users/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

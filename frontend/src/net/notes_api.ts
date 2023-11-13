@@ -38,7 +38,7 @@ export async function signUp(body: SignUpBody): Promise<User> {
 }
 
 export interface LoginBody {
-  email: string;
+  username: string;
   password: string;
 }
 

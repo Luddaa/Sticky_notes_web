@@ -6,6 +6,7 @@ import styles from './styles/Notes.module.css';
 import * as NotesApi from './net/notes_api';
 import AddNoteDialog from './components/AddNoteDialog';
 import styleUtils from './styles/utils.module.css';
+import SignUpModel from './components/signupModel';
 
 function App() {
   // State to store notes
@@ -70,6 +71,15 @@ function App() {
           }}
         />
       )}
+
+      {
+        true &&
+        <SignUpModel
+        onDismiss={()=>{}}
+        onSignUpSuccess={()=>{}}
+          />
+        }
+      
     </Container>
   );
 }

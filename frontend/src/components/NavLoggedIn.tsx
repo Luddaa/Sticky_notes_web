@@ -8,8 +8,7 @@ interface NavBarLoggedInViewProps {
 }
 
 const NavBarLoggedInView = ({ user, onLogoutSuccessful }: NavBarLoggedInViewProps) => {
-
-    async function logout() {
+    const logout = async () => {
         try {
             await NotesApi.logout();
             onLogoutSuccessful();
@@ -17,14 +16,19 @@ const NavBarLoggedInView = ({ user, onLogoutSuccessful }: NavBarLoggedInViewProp
             console.error(error);
             alert(error);
         }
-    }
+    };
+
+    const textStyle = { color: '#f9d775' };
+    const buttonStyle = { backgroundColor: '#454746', border: '1px solid lightgray' };
 
     return (
         <>
-            <Navbar.Text className="me-2">
+            <Navbar.Text className="me-2" style={textStyle}>
                 Signed in as: {user.username}
             </Navbar.Text>
-            <Button onClick={logout}>Log out</Button>
+            <Button onClick={logout} variant="danger" style={buttonStyle}>
+                Log out
+            </Button>
         </>
     );
 }

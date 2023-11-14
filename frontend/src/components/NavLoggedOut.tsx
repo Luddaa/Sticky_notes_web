@@ -9,9 +9,11 @@ interface NavBarLoggedOutProps {
 const NavBarLoggedOut = ({ onSignUpClicked, onLoginClicked, textColor }: NavBarLoggedOutProps) => {
 
     const buttonStyle = {
-        backgroundColor: '#212529',
-        borderColor: '#212529',
+        backgroundColor: '#454746',
+        border: '1px solid lightgray',
         color: textColor || 'white', 
+        margin: '6px',
+
     };
     
     return (

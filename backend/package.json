@@ -4,8 +4,10 @@
   "description": "",
   "main": "dis/server.js",
   "scripts": {
-    "start": "ts-node-dev app.ts",
+    "start": "nodemon src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
+  
 },
   "keywords": [],
   "author": "",

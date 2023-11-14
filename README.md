@@ -4,6 +4,8 @@ Sticky Notes Web is a straightforward and practical web application that helps y
 
 It's like having digital sticky notes that you can access from anywhere. Here's what it can do for you:
 
+The web site is deployed at <https://luddaa.github.io/Sticky_notes_web/.
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
